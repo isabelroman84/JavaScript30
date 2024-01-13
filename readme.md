@@ -5,4 +5,5 @@
 View my portfolio page for this challenge [here](https://isabelroman84.github.io/JavaScript30/)
 
 Day 1: [JavaScript Drum Kit](https://isabelroman84.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/) <br />
+Day 2: [JavaScript Clock]() <br />
 

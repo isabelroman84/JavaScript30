@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <main class="clock">
+    <div class="clock-face">
+
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+    Made by Isabel | <a href="https://github.com/isabelroman84" target="_blank">GitHub</a> | <a
+      href="https://www.linkedin.com/in/isabelroman84/" target="_blank">LinkedIn</a> | <a
+      href="https://isabelroman84.github.io/JavaScript30/">Back to main page</a>
+  </footer>
+
+
+  <style>
+    html {
+      background: #00213a;
+      background-size: cover;
+      font-family: sans-serif;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid #00a6dc;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: #00efff;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+
+    footer {
+      bottom: 0;
+      color: #99d400;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+    }
+
+    footer a {
+      color: #99d400;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #DAA520;
+      text-decoration: none;
+    }
+  </style>
+
+  <script>
+    const secondHand = document.querySelector('.second-hand');
+    const minsHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+
+    function setDate() {
+      const now = new Date(); // instance of date object - if it is empty: current date and time
+      const seconds = now.getSeconds(); // get seconds
+      const secondsDegrees = ((seconds / 60) * 360) + 90; // convert seconds to degrees - compensate for the transform: rotate(90deg) in the css
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // rotate the hand	
+
+      const mins = now.getMinutes(); // get minutes
+      const minsDegrees = ((mins / 60) * 360) + 90;
+      minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+      const hour = now.getHours(); // get minutes
+      const hourDegrees = ((hour / 12) * 360) + 90;
+      hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+    }
+
+    setInterval(setDate, 1000);
+
+  </script>
+</body>
+
+</html>
