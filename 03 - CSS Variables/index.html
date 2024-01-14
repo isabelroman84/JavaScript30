@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+  <header>
+    <h1>Update CSS Variables with <span class='hl'>JS</span></h1>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label for="spacing">Spacing:</label>
+      <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+      <label for="blur">Blur:</label>
+      <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+      <label for="base">Base Color</label>
+      <input id="base" type="color" name="base" value="#132312">
+    </div>
+
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" width="45%" height="auto">
+  </main>
+
+  <footer>
+    Made by Isabel | <a href="https://github.com/isabelroman84" target="_blank">GitHub</a> | <a
+      href="https://www.linkedin.com/in/isabelroman84/" target="_blank">LinkedIn</a> | <a
+      href="https://isabelroman84.github.io/JavaScript30/">Back to main page</a> <br>
+    <a
+      href="https://www.freepik.es/vector-gratis/fondo-acuarela-morado-rosa_16836416.htm#query=tonos%20nebulosa&position=4&from_view=keyword&track=ais&uuid=ec3d4eec-9d65-46ce-89a3-b93c4eb9b1fa">Imagen
+      de Vectonauta</a> en Freepik
+  </footer>
+
+  <style>
+    :root {
+      --base: #132312;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      /* highlight */
+      color: var(--base);
+    }
+
+    body {
+      text-align: center;
+      background: url("background.jpg");
+      /* background: #193549; */
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 20px;
+    }
+
+    .controls {
+      margin-bottom: 50px;
+    }
+
+    input {
+      width: 100px;
+    }
+
+    footer {
+      align-self: end;
+      font-size: smaller;
+      margin: 20px 0 0 0;
+      color: var(--base);
+    }
+
+    footer a {
+      color: var(--base);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: orangered;
+      text-decoration: none;
+    }
+  </style>
+
+  <script>
+
+    const inputs = document.querySelectorAll('.controls input');
+
+    function handleUpdate() {
+      const suffix = this.dataset.sizing || ''; // nothing if undefined 
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      // console.log(this.name);
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+  </script>
+</body>
+
+</html>
