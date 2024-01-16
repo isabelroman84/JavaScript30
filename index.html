@@ -12,6 +12,7 @@
             --primary-color: #000000;
             --secondary-color: #ffffff;
             --accent-color: #DAA520;
+            --box-shadow-color: rgba(255, 255, 255, 0.5);
         }
 
         body {
@@ -57,12 +58,12 @@
         }
 
         .card {
-             -webkit-transition: all 0.2s ease-in;
+            -webkit-transition: all 0.2s ease-in;
             -moz-transition: all 0.2s ease-in;
             -ms-transition: all 0.2s ease-in;
             -o-transition: all 0.2s ease-in;
             border-radius: 5px;
-            box-shadow: 0px 3px 4px rgba(255, 255, 255, 0.40);
+            box-shadow: 0px 3px 4px var(--box-shadow-color);
             height: 100%;
             transition: all 0.2s ease-in;
             width: 100%;
@@ -73,13 +74,13 @@
             -moz-transition: all 0.2s ease-in;
             -ms-transition: all 0.2s ease-in;
             -o-transition: all 0.2s ease-in;
-            box-shadow: 0px 15px 26px rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 15px 26px var(--box-shadow-color);
             transition: all 0.2s ease-in;
         }
 
         .card .image-box {
             border-radius: 5px;
-            box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 2px 15px var(--box-shadow-color);
             margin: 0;
             overflow: hidden;
         }
@@ -111,6 +112,11 @@
             padding: 10px;
         }
 
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
             .project-item {
                 margin-bottom: 1.5%;
@@ -138,7 +144,7 @@
             <div class="project-item">
                 <div class="card">
                     <div class="image-box">
-                        <img src="./projects/drum_kit.png" alt="JavaScript Drum Kit" class="card-img-top" width="100%"
+                        <img src="./images/drum_kit.png" alt="JavaScript Drum Kit" class="card-img-top" width="100%"
                             height="100%">
                     </div>
                     <div class="card-body">
@@ -152,7 +158,7 @@
             <div class="project-item">
                 <div class="card">
                     <div class="image-box">
-                        <img src="./projects/clock.png" alt="CSS and JS Clock" class="card-img-top" width="100%"
+                        <img src="./images/clock.png" alt="CSS and JS Clock" class="card-img-top" width="100%"
                             height="100%">
                     </div>
                     <div class="card-body">
@@ -165,12 +171,11 @@
                         </p>
                     </div>
                 </div>
-            </div>
-             
+            </div>         
             <div class="project-item">
                 <div class="card">
                     <div class="image-box">
-                        <img src="./projects/img_blur.png" alt="JS and CSS Clock" class="card-img-top" width="100%"
+                        <img src="./images/img_blur.png" alt="JS and CSS Clock" class="card-img-top" width="100%"
                             height="100%">
                     </div>
                     <div class="card-body">
@@ -178,6 +183,24 @@
                         <p class="card-text">
                             <a href="./03 - CSS Variables/" target="_blank">Demo</a> | <a
                                 href="https://github.com/isabelroman84/JavaScript30/tree/master/03%20-%20CSS%20Variables"
+                                target="_blank">Repo
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/array_cardio1.png" alt="Array Cardio Day 1" class="card-img-top" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Day 3: CSS Variables</h3>
+                        <p class="card-text">
+                            <a href="./04 - Array Cardio Day 1/" target="_blank">Demo</a> | <a
+                                href=""
                                 target="_blank">Repo
                             </a>
                         </p>
