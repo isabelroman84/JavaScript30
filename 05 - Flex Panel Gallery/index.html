@@ -160,7 +160,16 @@
   <script>
     const panels = document.querySelectorAll('.panel') // returns a node list
 
+    function closeOtherPanels(clickedPanel) {
+      panels.forEach(panel => {
+        if (panel !== clickedPanel && panel.classList.contains('open')) {
+          panel.classList.remove('open');
+        }
+      });
+    }
+
     function toggleOpen() {
+      closeOtherPanels(this);
       this.classList.toggle('open') // appear to disappear
     }
 
