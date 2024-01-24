@@ -9,4 +9,5 @@ Day 2: [JavaScript Clock](https://isabelroman84.github.io/JavaScript30/02%20-%20
 Day 3: [CSS Variables](https://isabelroman84.github.io/JavaScript30/03%20-%20CSS%20Variables/) <br />
 Day 4: [Array Cardio Day 1](https://isabelroman84.github.io/JavaScript30/04%20-%20Array%20Cardio%20Day%201/) <br />
 Day 5: [Flex Panels Image Gallery](https://isabelroman84.github.io/JavaScript30/05%20-%20Flex%20Panel%20Gallery/) <br />
+Day 6: [Type Ahead]() <br />
 
